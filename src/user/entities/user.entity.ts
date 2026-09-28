@@ -17,6 +17,9 @@ export class User {
     @Column({nullable: true})
     phone: string;
 
+    @Column('varchar', {array: true, default:['user']})
+    roles:string;
+
     @Column({type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
     createAt: Date; 
 }

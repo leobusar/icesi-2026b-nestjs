@@ -23,7 +23,7 @@ export class AuthService {
       return  {
         user_id: user.id,
         email: user.email, 
-        roles: ['admin'],
+        roles: user.roles,
         token: this.jwtService.sign({user_id: user.id})
       }
     } catch (error) {
